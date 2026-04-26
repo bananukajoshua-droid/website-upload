@@ -144,7 +144,7 @@
             font-size: 1.8rem;
             font-weight: 700;
             color: var(--n-darkest);
-            gap:0px;
+            gap:12px;
         }
 
         .logo img { margin-right:12px; border-radius:4px;flex-shrink:0; }
@@ -191,7 +191,7 @@
         .hero {
             position: relative;
             height: 85vh;
-            background: url('../Images/WhatsApp-Image-2025-10-18-at-10.03.05-AM.jpeg') no-repeat center center/cover;
+            background: url('Images/WhatsApp-Image-2025-10-18-at-10.03.05-AM.jpeg') no-repeat center center/cover;
             display: flex;
             align-items: center;
             color: var(--n-lightest);
