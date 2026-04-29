@@ -61,15 +61,33 @@
             const toast = document.getElementById('toast');
             form.addEventListener('submit', (e) => {
                 e.preventDefault();
+
+                 const emailInput = form.querySelector('input[type="email"]');
+emailInput.addEventListener('input',() => {
+if(emailInput.style.borderColor === "red") {
+emailInput.style.borderColor = "";
+}
+});
+                const emailValue = emailInput.value.trim();
+const emailPattern =  /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+if(!emailPattern.test(emailValue)){
+alert("Please enter a valid email address.")
+emailInput.style.borderColor = "red";
+return;
+}
                 const btn = form.querySelector('button');
                 const originalText = btn.innerHTML;
                 btn.innerHTML = 'Sending...';
+                btn.disabled = true; 
                 
                 setTimeout(() => {
                     toast.style.transform = 'translateY(0)';
                     form.reset();
                     btn.innerHTML = originalText;
+                    btn.disabled = false;
                     setTimeout(() => toast.style.transform = 'translateY(150%)', 3000);
                 }, 1000);
             });
         }
+                
